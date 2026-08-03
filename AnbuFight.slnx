@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AnbuFight.Api/AnbuFight.Api.csproj" />
+    <Project Path="src/AnbuFight.Application/AnbuFight.Application.csproj" />
+    <Project Path="src/AnbuFight.Domain/AnbuFight.Domain.csproj" />
+    <Project Path="src/AnbuFight.Infrastructure/AnbuFight.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AnbuFight.Api.IntegrationTests/AnbuFight.Api.IntegrationTests.csproj" />
+    <Project Path="tests/AnbuFight.Application.UnitTests/AnbuFight.Application.UnitTests.csproj" />
+  </Folder>
+</Solution>

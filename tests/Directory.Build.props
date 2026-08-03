@@ -1,0 +1,14 @@
+<Project>
+
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <!--
+      CA1707: underscores are the readable convention for test names.
+      CA1711: "Collection" is the xUnit naming convention for a collection definition.
+    -->
+    <NoWarn>$(NoWarn);CA1707;CA1711</NoWarn>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+</Project>

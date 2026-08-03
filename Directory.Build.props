@@ -1,0 +1,29 @@
+<Project>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <!--
+      XML docs feed the OpenAPI document: the summaries written on endpoints, DTOs and enums
+      become the descriptions shown in Swagger UI.
+    -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!--
+      CA1000: static factories/projections on generic and record types are deliberate.
+      CA1304/CA1311/CA1862: ToLower() inside LINQ expression trees is translated to SQL lower(),
+      it never runs in .NET, so the culture-aware overloads do not apply.
+    -->
+    <!--
+      CA1848/CA1873: LoggerMessage delegates are not worth the ceremony on startup-only paths.
+    -->
+    <!--
+      CS1591/CS1573: only the members and fields worth explaining carry XML comments;
+      the rest are self-describing and documenting them would just add noise.
+    -->
+    <NoWarn>$(NoWarn);CA1000;CA1304;CA1311;CA1862;CA1848;CA1873;CS1591;CS1573</NoWarn>
+  </PropertyGroup>
+
+</Project>

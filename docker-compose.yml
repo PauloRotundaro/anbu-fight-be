@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: anbufight-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: anbufight
+      POSTGRES_USER: anbufight
+      POSTGRES_PASSWORD: anbufight
+    ports:
+      # 5433 on the host: leaves the default 5432 free for a locally installed PostgreSQL.
+      - "5433:5432"
+    volumes:
+      - anbufight-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U anbufight -d anbufight"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  anbufight-pgdata:

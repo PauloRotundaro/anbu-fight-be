@@ -1,0 +1,12 @@
+root = true
+
+[*.cs]
+indent_style = space
+indent_size = 4
+charset = utf-8-bom
+insert_final_newline = true
+
+# EF Core writes these files; they are not hand maintained, so style and design
+# analyzers have nothing useful to say about them.
+[**/Persistence/Migrations/*.cs]
+generated_code = true
