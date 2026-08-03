@@ -1,0 +1,24 @@
+# Tudo o que não entra no contexto de build: acelera o envio e evita vazar
+# artefatos locais para dentro da imagem.
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/*.user
+
+.git/
+.gitignore
+.github/
+.claude/
+.qodo/
+
+tests/
+docs/
+*.md
+LICENSE
+
+docker-compose.yml
+.dockerignore
+Dockerfile
+railway.json
+dotnet-tools.json

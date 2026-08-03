@@ -38,8 +38,7 @@ public static class DependencyInjection
 
     private static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("Default")
-            ?? throw new InvalidOperationException("Connection string \"Default\" is not configured.");
+        var connectionString = ConnectionStringResolver.Resolve(configuration);
 
         services.Configure<DatabaseSeedOptions>(configuration.GetSection(DatabaseSeedOptions.SectionName));
 
